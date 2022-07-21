@@ -4,7 +4,7 @@
 
 > 提供多種台灣觀光景點、在地美食、地方節慶活動的旅遊網站!
 
-Demo:  https://jimmyfang-ai.github.io/The-F2E-_-week1-TaiWalk/
+Demo:  https://jimmyfang-ai.github.io/The-F2E-week1-TaiWalk/
 
 ## **專案說明**
 設計稿：THE F2E 3rd 活動 - UI 設計師 [早餐](https://2021.thef2e.com/users/6296427084285739247/) 提供
@@ -54,6 +54,6 @@ Demo:  https://jimmyfang-ai.github.io/The-F2E-_-week1-TaiWalk/
 
 
 ---
-更多資訊歡迎前往 [台灣走走．Tai Walk](https://jimmyfang-ai.github.io/The-F2E-_-week1-TaiWalk/)  進一步了解。
+更多資訊歡迎前往 [台灣走走．Tai Walk](  https://jimmyfang-ai.github.io/The-F2E-week1-TaiWalk/)  進一步了解。
 
 "# The-F2E-week1-TaiWalk" 
