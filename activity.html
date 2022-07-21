@@ -1,30 +1,97 @@
----
-title: 探索景點
-layout: ./app/layout.ejs
-engine: ejs
-current: scenicSpot
----
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="description" content="提供多種台灣觀光景點、在地美食、地方節慶活動的旅遊網站!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="台灣走走．Tai Walk" />
+  <meta property="og:description" content="提供多種台灣觀光景點、在地美食、地方節慶活動的旅遊網站!">
+  <meta property="og:url" content="https://jimmyfang-ai.github.io/The-F2E-_-week1-TaiWalk/" />
 
 
+  <!-- google icon -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <title>
+    節慶活動
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2D0T5FF9X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E2D0T5FF9X');
+  </script>
+</head>
+
+<body>
+  <!-- 導覽列 -->
+  <nav class="navbar  navbar-expand-lg navbar-light bg-light py-1 py-lg-4 sticky-top shadow-sm" id="navbar-toggle">
+    <div class="container">
+      <!-- logo -->
+      <h1 class="mx-auto ps-4 ps-md-0"><a class="logo" href="./index.html">台灣走走．Tai Walk</a></h1>
+
+      <!-- 漢堡開關 -->
+      <button class="navbar-toggler burger-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- 客製化漢堡 -->
+        <div class="togglerMenu-icon " id="toggler-burger">
+          <div class="togglerMenu-icon-burger"></div>
+        </div>
+      </button>
+
+      <!-- 選單 -->
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav align-items-center align-items-lg-start  ms-auto py-2 py-md-0">
+          <li class="nav-item position-relative  mb-1 mb-md-0  mx-lg-2">
+            <a class="nav-link deco-line-primary-hover  py-lg-0  "
+              aria-current="page" href="./scenicSpot.html">探索景點</a>
+          </li>
+          <li class="nav-item position-relative  mb-1 mb-md-0 mx-lg-2">
+            <a class="nav-link deco-line-primary-hover py-lg-0 active"
+              href="./activity.html">節慶活動</a>
+          </li>
+          <li class="nav-item position-relative   mx-lg-2">
+            <a class="nav-link deco-line-primary-hover py-lg-0 "
+              href="./restaurant.html">品嚐美食</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要內容 -->
+  <main class="container pt-5 pt-md-7 pb-7 pb-md-9">
+    
 <div class="container mb-2  mb-lg-6">
-    <div class="scenicSpot_breadcrumb">
+    <div class="activity_breadcrumb">
         <a class="text-info" href="./index.html">首頁</a> /
-        <a class="breadcrumb-theme text-secondary" href="./scenicSpot.html">探索景點</a>
+        <a class="breadcrumb-theme text-secondary" href="./activity.html">節慶活動</a>
         <a class="breadcrumb-city" href="#"></a>
         <a class="breadcrumb-location" href="#"></a>
     </div>
 </div>
 
 
-<!-- 探索景點主要內容 -->
-<section class="scenicSpot_themeArea mb-1">
+<!-- 節慶活動主要內容 -->
+<section class="activity_themeArea mb-1 ">
     <div class="container">
 
-        <!-- 探索景點 搜尋功能 -->
-        <div class="scenicSpot_searchGroup mb-4 mb-md-6">
+        <!-- 節慶活動 搜尋功能 -->
+        <div class="activity_searchGroup mb-4 mb-md-6">
             <div class="row   gx-md-2 mb-4 mb-lg-7">
                 <div class="col-12  col-md-4 mb-2">
-                    <select class="scenicSpot_searchCity form-select text-primary" aria-label="select">
+                    <select class="activity_searchCity form-select text-primary" aria-label="select">
                         <option value="全部縣市" selected="">全部縣市</option>
                         <option value="臺北市">臺北市</option>
                         <option value="新北市">新北市</option>
@@ -51,11 +118,10 @@ current: scenicSpot
                     </select>
                 </div>
                 <div class="col-12  col-md-5 mb-2">
-                    <input type="text" class="scenicSpot_searchKeyword  form-control  text-muted" placeholder="你想去哪裡？請輸入關鍵字">
+                    <input type="text" class="activity_searchKeyword  form-control  text-muted" placeholder="你想去哪裡？請輸入關鍵字">
                 </div>
                 <div class="col-12  col-md-3 mb-2">
-                    <button type="button"
-                        class="scenicSpot_searchBtn  btn btn-custom-search   d-flex justify-content-center align-items-center text-white w-100 ">
+                    <button type="button" class="activity_searchBtn  btn btn-custom-search   d-flex justify-content-center align-items-center text-white w-100 ">
                         <span class="material-symbols-outlined me-2 ">search</span>搜尋
                     </button>
                 </div>
@@ -63,123 +129,114 @@ current: scenicSpot
 
             <!-- 主題分類區 -->
             <h2 class="fs-4 fs-md-2 text-dark  fw-light mb-2">熱門主題</h2>
-            <ul class="scenicSpot_categoryList row row-cols-2  row-cols-md-3 row-cols-lg-4">
-                <li class="col mb-2" data-category="自然風景類">
-                    <div class="category-card   rounded-4 rounded-md-6">
-                        <div class="ratio ratio-16x9  rounded-4 rounded-md-6 overflow-hidden">
-                            <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-1.png"
-                                    alt="scenicSpot">
-                            </a>
-                        </div>
-                        <h4 class="category-cardText   fs-6 fs-md-4   mb-0">自然風景類
-                        </h4>
-                    </div>
-                </li>
-                <li class="col mb-2" data-category="觀光工廠類">
-                    <div class="category-card rounded-4 rounded-md-6">
-                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
-                            <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-2.png"
-                                    alt="scenicSpot">
-                            </a>
-                        </div>
-                        <h4 class="category-cardText fs-6 fs-md-4   mb-0">觀光工廠類
-                        </h4>
-                    </div>
-                </li>
-                <li class="col mb-2" data-category="遊憩類">
-                    <div class="category-card rounded-4 rounded-md-6">
-                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
-                            <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-3.png"
-                                    alt="scenicSpot">
-                            </a>
-                        </div>
-                        <h4 class="category-cardText  fs-6  fs-md-4   mb-0">遊憩類
-                        </h4>
-                    </div>
-                </li>
-                <li class="col mb-2" data-category="休閒農業類">
+            <ul class="activity_categoryList row row-cols-2  row-cols-md-3 row-cols-lg-4">
+                <li class="col mb-2" data-category="節慶活動">
                     <div class="category-card  rounded-4 rounded-md-6">
                         <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
                             <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-4.png"
-                                    alt="scenicSpot">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg2-1.png"
+                                    alt="節慶活動">
                             </a>
                         </div>
-                        <h4 class="category-cardText   fs-6 fs-md-4   mb-0">休閒農業類
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">節慶活動
                         </h4>
                     </div>
                 </li>
-                <li class="col mb-2" data-category="生態類">
+                <li class="col mb-2" data-category="自行車活動">
                     <div class="category-card rounded-4 rounded-md-6">
                         <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
                             <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-5.png"
-                                    alt="scenicSpot">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg2-2.png"
+                                    alt="自行車活動">
                             </a>
                         </div>
-                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">生態類
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">自行車活動
                         </h4>
                     </div>
                 </li>
-                <li class="col mb-2" data-category="溫泉類">
+                <li class="col mb-2" data-category="藝文活動">
                     <div class="category-card rounded-4 rounded-md-6">
                         <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
                             <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-6.png"
-                                    alt="scenicSpot">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg2-3.png"
+                                    alt="藝文活動">
                             </a>
                         </div>
-                        <h4 class="category-cardText fs-6 fs-md-4   mb-0">溫泉類
+                        <h4 class="category-cardText fs-6  fs-md-4   mb-0">藝文活動
                         </h4>
                     </div>
                 </li>
-                <li class="col mb-2" data-category="古蹟類">
+                <li class="col mb-2" data-category="產業文化活動">
                     <div class="category-card rounded-4 rounded-md-6">
                         <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
                             <a href="#">
-                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg1-7.png"
-                                    alt="scenicSpot">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg2-4.png"
+                                    alt="產業文化活動">
                             </a>
                         </div>
-                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">古蹟類
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">產業文化活動
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="活動快報">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6  overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg2-5.png"
+                                    alt="活動快報">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">活動快報
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="四季活動">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6  overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg2-6.png"
+                                    alt="四季活動">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">四季活動
                         </h4>
                     </div>
                 </li>
             </ul>
         </div>
+
     </div>
 </section>
 
 
-<!-- 探索景點    呈現篩選結果 -->
-<section class="scenicSpot_searchResult mb-1 d-none">
+<!-- 節慶活動  呈現篩選結果 -->
+<section class="activity_searchResult mb-1 d-none">
     <div class="container">
+
         <h2 class=" fs-4 fs-md-2 text-dark fw-light mb-2">搜尋結果
             <p class="fs-sm fs-md-lg d-inline">共有 <span class="search_resultNum text-warning">240</span> 筆
             </p>
         </h2>
-        <div class="scenicSpot_resultList  row  mb-8">
+
+        <div class="activity_resultList  row  mb-8">
+
         </div>
+
+        <!-- 分頁 -->
+        <nav aria-label="Page  navigation">
+            <ul class="pagination  mb-0 justify-content-center">
+            </ul>
+        </nav>
     </div>
-
-    <!-- 分頁 -->
-    <!-- <nav aria-label="Page  navigation">
-        <ul class="pagination  mb-0 justify-content-center">
-        </ul>
-    </nav> -->
-
+    
 </section>
 
 
-
-<!-- 探索景點 分類內頁 -->
-<section class="scenicSpot_categoryInner mb-1  d-none">
+<!-- 節慶活動 分類內頁 -->
+<section class="activity_categoryInner mb-1 d-none">
     <!-- 輪播卡片 -->
     <div class="container mb-2 mb-md-5">
-        <div class="swiper swiper-scenicSpot-banner">
+        <div class="swiper swiper-activity-banner">
             <!-- 要插入 render 回來的資料 -->
             <ul class="swiper-wrapper rounded-4 rounded-md-6">
                 <li class="swiper-slide">
@@ -201,34 +258,35 @@ current: scenicSpot
 
     <!-- 內頁內容 -->
     <div class="container mb-7">
-        <h2 class="scenicSpot_mame  fs-4 fs-md-2 fw-light mb-1 mb-md-2"></h2>
+        <h2 class="activity_name fs-4 fs-md-2 fw-light mb-1 mb-md-2"></h2>
         <div class="mb-2 mb-md-5">
-            <a class="scenicSpot_category  btn btn-outline-badge  rounded-pill  fs-sm fs-md-lg lh-base fw-normal me-1" href="#">
+            <a class="activity_category  btn btn-outline-badge  rounded-pill  fs-sm fs-md-lg lh-base fw-normal me-1" href="#">
             </a>
         </div>
-        <h5 class="fs-m fs-md-5 fw-bold mb-1">景點介紹：</h5>
-        <p class="scenicSpot_description fw-light mb-5 mb-md-7"></p>
+        <h5 class="fs-m fs-md-5 fw-bold mb-1">活動介紹：</h5>
+        <p class="activity_description  fw-light mb-5 mb-md-7"></p>
 
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="bg-light  col rounded-0 rounded-lg-4 h-100">
                 <div class="px-1 px-lg-3 py-5 ">
-                    <p class="fw-bold">開放時間： <span class="scenicSpot_opentTime  fw-normal"></span></p>
-                    <p class="fw-bold">服務電話： <a class="scenicSpot_phone text-gray-black fw-normal" href="#"></a></p>
-                    <p class="fw-bold">景點地址： <span
-                            class="scenicSpot_address text-break text-info text-decoration-underline fw-normal"></span></p>
-                    <p class=" fw-bold">官方網站： <a
-                            class="scenicSpot_websiteUrl text-info text-decoration-underline fw-normal" href="#"></a>
+                    <p class="fw-bold">活動時間： <span class="activity_time fw-normal"></span></p>
+                    <p class="fw-bold">聯絡電話： <a class="activity_phone text-gray-black fw-normal"
+                            href="tel:+886-3-9545114"></a></p>
+                    <p class="fw-bold">主辦單位： <span
+                            class="activity_organizer  fw-normal"></span></p>
+                    <p class="fw-bold">活動地點： <span
+                            class="activity_address text-info text-decoration-underline fw-normal"></span></p>
+                    <p class="fw-bold">官方網站： <a class="activity_websiteUrl text-break text-info text-decoration-underline fw-normal"
+                            href="#"></a>
                     </p>
-                    <p class="fw-bold">票價資訊： <span class="scenicSpot_ticketInfo fw-normal"></span></p>
+                    <p class="fw-bold">活動費用： <span class="activity_charge fw-normal"></span></p>
                     <div>
-                        <p class="fw-bold mb-1">注意事項：</p>
-                        <span class="scenicSpot_remarks fw-normal"></span>
+                        <p class="fw-bold mb-1">注意事項： <span class="activity_remarks fw-normal"></span></p>
                     </div>
-
                 </div>
             </div>
             <div class="bg-light bg-lg-white col pb-5 pb-lg-0">
-                <div class="scenicSpot_map ratio  ratio-17x9 ratio-lg-9x4 overflow-hidden mb-3 mb-lg-5">
+                <div class="activity_map ratio  ratio-17x9 ratio-lg-9x4 overflow-hidden mb-3 mb-lg-5">
                     <iframe class="rounded-4"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14454.01159552712!2d121.58607397049146!3d25.08483239317479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442acea866a6e2f%3A0xb251bab667083c8f!2z5aSn5rmW5YWs5ZySICjpmLLngb3lhazlnJLvvIk!5e0!3m2!1szh-TW!2stw!4v1654327720711!5m2!1szh-TW!2stw"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -236,7 +294,7 @@ current: scenicSpot
                 </div>
 
                 <p class="fw-bold">周邊資訊：</p>
-                <ul class="scenicSpot_nearbyInfo row row-cols-1 row-cols-lg-3 gy-1 gy-lg-0">
+                <ul class="activity_nearbyInfo row row-cols-1 row-cols-lg-3 gy-1 gy-lg-0">
                     <li class="col">
                         <a class="d-block  border border-1 rounded-3" href="#">
                             <div class="nearbyInfo-card  py-2  py-md-4">
@@ -251,7 +309,7 @@ current: scenicSpot
                         </a>
                     </li>
                     <li class="col">
-                        <a class="d-block  border border-1 rounded-3" href="#">
+                        <a class="d-block  border border-1 rounded-3" href="#"> 
                             <div class="nearbyInfo-card   py-2  py-md-4">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <img class="nearbyIcon" src="./assets/images/nearby-event30.png"
@@ -265,7 +323,7 @@ current: scenicSpot
                     </li>
                     <li class="col">
                         <a class="d-block  border border-1 rounded-3" href="#">
-                            <div class="nearbyInfo-card  py-2  py-md-4">
+                            <div class="nearbyInfo-card   py-2  py-md-4">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <img class="nearbyIcon" src="./assets/images/nearby-food30.png" alt="nearby-food30">
                                     <img class="nearbyIcon-hover " src="./assets/images/nearby-food30_hover.png"
@@ -284,22 +342,21 @@ current: scenicSpot
     <!-- 還有這些不能錯過的景點 -->
     <div class="container">
         <div class="d-flex justify-content-between align-items-center px-0 px-md-3 mb-1 mb-md-2">
-            <h2 class="fs-4 fs-md-2 fw-light">還有這些不能錯過<span class="d-none d-md-inline">的景點</span></h2>
-            <a class="btn btn-moreBtn px-0 px-md-2" href="./scenicSpot.html"><span class="btn-inner"> 查看更多景點
-                    ❯</span></a>
+            <h2 class="fs-4 fs-md-2 fw-light">還有這些不能錯過<span class="d-none d-md-inline">的活動</span></h2>
+            <a class="btn btn-moreBtn px-0 px-md-2" href="./activity.html"><span class="btn-inner"> 查看更多活動 ❯</span></a>
         </div>
 
         <div class="row">
             <div class="col">
-                <!-- scenicSpot-swiper -->
+                <!-- activity-swiper -->
                 <div class="swiper swiper-recommend">
                     <!-- 要插入 render 回來的資料 -->
-                    <ul class="swiper-wrapper recommend_scenicSpot">
+                    <ul class="swiper-wrapper  recommend_activity">
                         <li class="swiper-slide">
                             <div class="ratio ratio-5x4 rounded-5 overflow-hidden">
                                 <a href="#">
                                     <img class="w-100 h-100 img-cover zoomImg"
-                                        src="./assets/images/RestaurantPicture.png" alt="scenicSpot">
+                                        src="./assets/images/RestaurantPicture.png" alt="spots">
                                 </a>
                             </div>
                             <div class="py-1 py-md-2">
@@ -312,7 +369,7 @@ current: scenicSpot
                             <div class="ratio ratio-5x4 rounded-5 overflow-hidden">
                                 <a href="#">
                                     <img class="w-100 h-100 img-cover zoomImg"
-                                        src="./assets/images/RestaurantPicture.png" alt="scenicSpot">
+                                        src="./assets/images/RestaurantPicture.png" alt="spots">
                                 </a>
                             </div>
                             <div class="py-1 py-md-2">
@@ -325,20 +382,7 @@ current: scenicSpot
                             <div class="ratio ratio-5x4 rounded-5 overflow-hidden">
                                 <a href="#">
                                     <img class="w-100 h-100 img-cover zoomImg"
-                                        src="./assets/images/RestaurantPicture.png" alt="scenicSpot">
-                                </a>
-                            </div>
-                            <div class="py-1 py-md-2">
-                                <h5 class="slide-title-hover  fw-bold fs-m fs-md-5 mb-1">龜山島牛奶海</h5>
-                                <span class="text-secondary d-flex align-items-center"><img class="me-1"
-                                        src="./assets/images/spot16.png" alt="spot">宜蘭縣</span>
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <div class="ratio ratio-5x4 rounded-5 overflow-hidden">
-                                <a href="#">
-                                    <img class="w-100 h-100 img-cover zoomImg"
-                                        src="./assets/images/RestaurantPicture.png" alt="scenicSpot">
+                                        src="./assets/images/RestaurantPicture.png" alt="spots">
                                 </a>
                             </div>
                             <div class="py-1 py-md-2">
@@ -353,3 +397,47 @@ current: scenicSpot
         </div>
     </div>
 </section>
+  </main>
+
+  <!-- 表尾 -->
+  <footer class="bg-success py-3">
+    <p class="text-center text-white mb-0 fs-sm ">TheF2E @ 2021.# Design: Breakfast / Code: JimmyFang</p>
+  </footer>
+
+
+  <!-- goTop 回到頂端 -->
+  <div class="goTop">
+    <a class="text-primary d-block" href="#" id="goTopBtn">
+      <span class="material-symbols-outlined display-5">
+        arrow_circle_up
+      </span>
+    </a>
+  </div>
+
+  <!--loading  -->
+  <div class="loading" style="display: none;">
+    <div class="loading-mask"></div>
+    <div class="loading-img">
+      <div class="loadingio-spinner-ripple-ett975kzlg6">
+        <div class="ldio-fhsto9ag0lp">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- 加密 使用 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+
+  <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>

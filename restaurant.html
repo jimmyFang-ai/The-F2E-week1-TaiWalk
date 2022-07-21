@@ -1,10 +1,78 @@
----
-title: 品嘗美食
-layout: ./app/layout.ejs
-engine: ejs
-current: restaurant
----
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="description" content="提供多種台灣觀光景點、在地美食、地方節慶活動的旅遊網站!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="台灣走走．Tai Walk" />
+  <meta property="og:description" content="提供多種台灣觀光景點、在地美食、地方節慶活動的旅遊網站!">
+  <meta property="og:url" content="https://jimmyfang-ai.github.io/The-F2E-_-week1-TaiWalk/" />
+
+
+  <!-- google icon -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <title>
+    品嘗美食
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2D0T5FF9X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E2D0T5FF9X');
+  </script>
+</head>
+
+<body>
+  <!-- 導覽列 -->
+  <nav class="navbar  navbar-expand-lg navbar-light bg-light py-1 py-lg-4 sticky-top shadow-sm" id="navbar-toggle">
+    <div class="container">
+      <!-- logo -->
+      <h1 class="mx-auto ps-4 ps-md-0"><a class="logo" href="./index.html">台灣走走．Tai Walk</a></h1>
+
+      <!-- 漢堡開關 -->
+      <button class="navbar-toggler burger-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- 客製化漢堡 -->
+        <div class="togglerMenu-icon " id="toggler-burger">
+          <div class="togglerMenu-icon-burger"></div>
+        </div>
+      </button>
+
+      <!-- 選單 -->
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav align-items-center align-items-lg-start  ms-auto py-2 py-md-0">
+          <li class="nav-item position-relative  mb-1 mb-md-0  mx-lg-2">
+            <a class="nav-link deco-line-primary-hover  py-lg-0  "
+              aria-current="page" href="./scenicSpot.html">探索景點</a>
+          </li>
+          <li class="nav-item position-relative  mb-1 mb-md-0 mx-lg-2">
+            <a class="nav-link deco-line-primary-hover py-lg-0 "
+              href="./activity.html">節慶活動</a>
+          </li>
+          <li class="nav-item position-relative   mx-lg-2">
+            <a class="nav-link deco-line-primary-hover py-lg-0 active"
+              href="./restaurant.html">品嚐美食</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要內容 -->
+  <main class="container pt-5 pt-md-7 pb-7 pb-md-9">
+    
 
 <div class="container mb-2  mb-lg-6">
     <div class="restaurant_breadcrumb">
@@ -282,3 +350,47 @@ current: restaurant
         </div>
     </div>
 </section>
+  </main>
+
+  <!-- 表尾 -->
+  <footer class="bg-success py-3">
+    <p class="text-center text-white mb-0 fs-sm ">TheF2E @ 2021.# Design: Breakfast / Code: JimmyFang</p>
+  </footer>
+
+
+  <!-- goTop 回到頂端 -->
+  <div class="goTop">
+    <a class="text-primary d-block" href="#" id="goTopBtn">
+      <span class="material-symbols-outlined display-5">
+        arrow_circle_up
+      </span>
+    </a>
+  </div>
+
+  <!--loading  -->
+  <div class="loading" style="display: none;">
+    <div class="loading-mask"></div>
+    <div class="loading-img">
+      <div class="loadingio-spinner-ripple-ett975kzlg6">
+        <div class="ldio-fhsto9ag0lp">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- 加密 使用 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+
+  <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+  <script src="./assets/js/vendors.js"></script>
+  <script src="./assets/js/all.js"></script>
+</body>
+
+</html>
