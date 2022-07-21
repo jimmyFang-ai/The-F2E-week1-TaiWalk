@@ -1,0 +1,17 @@
+.logo {
+    background-image: url(https://i.imgur.com/6qyOzOt.png);
+    display: block;
+    width: 118px;
+    height: 30px;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@include media-breakpoint-up(sm) { 
+    .logo {
+        background-image: url(https://i.imgur.com/bKYskSJ.png);
+        width: 241px;
+        height: 32px;
+    }
+}

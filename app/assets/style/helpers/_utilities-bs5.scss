@@ -1,0 +1,92 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "ratio": (
+        property: --bs-aspect-ratio,
+        class: ratio,
+        responsive: true,
+        values: ($aspect-ratios),
+      ),
+    "opacity": (
+        property: opacity,
+        values: (
+          0: 0,
+          25: .25,
+          50: .5,
+          75: .75,
+          100: 1,
+        )
+      ),
+      "font-size":
+       map-merge(
+        map-get($utilities, "font-size"),
+        (
+          responsive: true,
+          rfs: false,
+          values: map-merge(
+              map-get(map-get($utilities,  "font-size"), "values"),
+              (
+                xs:  $font-size-base * .75,
+                sm:    $font-size-base * .875,
+                m:   18px,
+                lg:   $font-size-base * 1.25,
+                xl:  22px,
+                xxl: 40px,
+              ),
+            ),
+        )
+      ),
+      "font-weight":
+       map-merge(
+         map-get($utilities, "font-weight"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "font-weight"), "values"),
+          (
+            medium: $font-weight-medium,
+          )
+        ),
+      )
+    ),
+     "ine-height":
+       map-merge(
+          map-get($utilities, "line-height"),
+          (
+            values: map-merge(
+              map-get(map-get($utilities, "line-height"), "values"),
+              (m: 1.75),
+            ),
+          ),
+      ),
+      "rounded": 
+        map-merge(
+          map-get($utilities, "rounded"),
+      (
+        // responsive: true,
+        values:
+        map-merge(map-get(map-get($utilities, "rounded"), "values"),
+          (
+            4: $border-radius-4,
+            5: $border-radius-5,
+            6: $border-radius-6,
+          )
+        ),
+      )
+    ),
+    "position": 
+      map-merge(
+          map-get($utilities, "position"),
+      (
+          responsive: true,
+      )
+    ),
+    "background-color": 
+      map-merge(
+          map-get($utilities, "background-color"),
+      (
+          responsive: true,
+      )
+    ),
+
+  )
+);

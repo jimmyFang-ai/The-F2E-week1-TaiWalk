@@ -1,0 +1,54 @@
+//客製化 自己的按鈕樣式 (避免直接修改bootstrap變數檔主題色，會造成樣式過多)
+.btn-custom-search {
+    // 利用寫好的button-variant Mixins，直接用include 引用 加上參數 
+    @include button-variant($primary, $primary); 
+}
+
+
+// mixin 客製化 按鈕效果樣式
+@mixin  customBtn($color) {
+    border: 0;
+    color: $color;
+    border-radius: $border-radius-4;
+    background-color: transparent;
+    position: relative;
+    transition: all .2s linear;
+    .btn-inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::before {
+        content: "";
+        width: 0%;
+        height: 100%;
+        display: block;
+        border-radius: $border-radius-4;
+        background-color: $color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .2s ease;
+    }
+
+    &:hover , :focus {
+        border: 0;
+        box-shadow: none;
+        color: $white;
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+// 查看更多活動按鈕
+.btn-moreBtn {
+    @include customBtn($danger);
+}
+
+// 詳細介紹按鈕
+.btn-infoBtn {
+  @include customBtn($info);
+}
+
+

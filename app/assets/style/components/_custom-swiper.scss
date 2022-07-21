@@ -1,0 +1,140 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+ 
+
+//管理共同的 swiper Banner
+%swiper-allBanner {
+    background: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+}
+
+@include media-breakpoint-up(sm) {
+    %swiper-allBanner{
+        height:  400px; 
+    }
+}
+
+
+// 首頁 heroBanner 
+.swiper-heroBanner  .swiper-wrapper {
+    @extend %swiper-allBanner;
+}
+
+// scenicSpot 內頁 swiper-banner
+.swiper-scenicSpot-banner .swiper-wrapper {
+    @extend %swiper-allBanner;
+ }
+ 
+//  activity 內頁 swiper-banner
+.swiper-activity-banner .swiper-wrapper {
+    @extend %swiper-allBanner;
+ }
+
+//  restaurant內頁 swiper-banner
+.swiper-restaurant-banner .swiper-wrapper {
+    @extend %swiper-allBanner;
+ }
+ 
+
+
+//  pagination 樣式
+.swiper-pagination {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #C4C4C4;
+    opacity: .8;
+    &-active {
+        width: 10px;
+        height: 10px;
+        background-color: $white;
+        opacity: 1;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 10px;
+}
+
+@include media-breakpoint-up(sm) { 
+    .swiper-pagination {
+        padding-right: 30px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        &-active {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+        bottom: 30px;
+    }
+
+}
+
+
+// 方向鍵樣式  navigation
+.swiper-button-prev, .swiper-button-next {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    color: $white;
+    border-radius: 50%;
+    border: 1px solid $white;
+}
+
+  .swiper-button-prev {
+    left: 30px;
+    right: auto;
+  }
+  
+  .swiper-button-next {
+      right: 30px;
+      left: auto;
+  }
+  
+
+  .swiper-button-prev::after ,.swiper-button-next::after {
+    font-size: 4px;
+  } 
+  
+
+  @include media-breakpoint-up(sm) { 
+    .swiper-button-prev, .swiper-button-next {
+       opacity: 1;
+    }
+}
+
+
+
+// slide 被hover 圖片變大效果
+.swiper-slide {
+    cursor: pointer;
+    &:hover {
+        .zoomImg {
+            transform: scale(1.2);
+        }
+
+        .slide-title-hover {
+         color: $primary;
+        }
+    }
+     
+}
+
+
+
+
+

@@ -1,0 +1,284 @@
+---
+title: 品嘗美食
+layout: ./app/layout.ejs
+engine: ejs
+current: restaurant
+---
+
+
+<div class="container mb-2  mb-lg-6">
+    <div class="restaurant_breadcrumb">
+        <a class="text-info" href="./index.html">首頁</a> /
+        <a class="breadcrumb-theme text-secondary" href="./restaurant.html">品嘗美食</a>
+        <a class="breadcrumb-city" href="#"></a>
+        <a class="breadcrumb-location" href="#"></a>
+    </div>
+</div>
+
+
+<!--品嘗美食 主要內容 -->
+<section class="restaurant_themeArea mb-1 ">
+    <div class="container">
+        <!-- 品嘗美食 搜尋功能 -->
+        <div class="restaurant_searchGroup mb-4 mb-md-6">
+            <div class="row   gx-md-2 mb-4 mb-lg-7">
+                <div class="col-12  col-md-4 mb-2">
+                    <select class="restaurant_searchCity form-select text-primary" aria-label="select">
+                        <option value="全部縣市" selected="">全部縣市</option>
+                        <option value="臺北市">臺北市</option>
+                        <option value="新北市">新北市</option>
+                        <option value="桃園市">桃園市</option>
+                        <option value="臺中市">臺中市</option>
+                        <option value="臺南市">臺南市</option>
+                        <option value="高雄市">高雄市</option>
+                        <option value="基隆市">基隆市</option>
+                        <option value="新竹市">新竹市</option>
+                        <option value="新竹縣">新竹縣</option>
+                        <option value="苗栗縣">苗栗縣</option>
+                        <option value="彰化縣">彰化縣</option>
+                        <option value="南投縣">南投縣</option>
+                        <option value="雲林縣">雲林縣</option>
+                        <option value="嘉義縣">嘉義縣</option>
+                        <option value="嘉義市">嘉義市</option>
+                        <option value="屏東縣">屏東縣</option>
+                        <option value="宜蘭縣">宜蘭縣</option>
+                        <option value="花蓮縣">花蓮縣</option>
+                        <option value="臺東縣">臺東縣</option>
+                        <option value="金門縣">金門縣</option>
+                        <option value="澎湖縣">澎湖縣</option>
+                        <option value="連江縣">連江縣</option>
+                    </select>
+                </div>
+                <div class="col-12  col-md-5 mb-2">
+                    <input type="text" class="restaurant_searchKeyword  form-control  text-muted" placeholder="你想去哪裡？請輸入關鍵字">
+                </div>
+                <div class="col-12  col-md-3 mb-2">
+                    <button type="button" class="restaurant_searchBtn  btn btn-custom-search   d-flex justify-content-center align-items-center text-white w-100 ">
+                        <span class="material-symbols-outlined me-2 ">search</span>搜尋
+                    </button>
+                </div>
+            </div>
+
+            <!-- 主題分類區 -->
+            <h2 class="fs-4 fs-md-2 text-dark  fw-light mb-2">熱門主題</h2>
+            <ul class="restaurant_categoryList row row-cols-2  row-cols-md-3 row-cols-lg-4">
+                <li class="col mb-2" data-category="地方特產">
+                    <div class="category-card  rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg3-1.png"
+                                    alt="地方特產">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">地方特產
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="中式美食">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg3-2.png"
+                                    alt="中式美食">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">中式美食
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="甜點冰品">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg3-3.png"
+                                    alt="甜點冰品">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText fs-6  fs-md-4   mb-0">甜點冰品
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="異國料理">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6 overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg3-4.png"
+                                    alt="異國料理">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">異國料理
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="伴手禮">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6  overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg3-5.png"
+                                    alt="伴手禮">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">伴手禮
+                        </h4>
+                    </div>
+                </li>
+                <li class="col mb-2" data-category="素食">
+                    <div class="category-card rounded-4 rounded-md-6">
+                        <div class="ratio ratio-16x9 rounded-4 rounded-md-6  overflow-hidden">
+                            <a href="#">
+                                <img class="w-100 h-100 img-cover zoomImg" src="./assets/images/Theme-bg3-6.png"
+                                    alt="素食">
+                            </a>
+                        </div>
+                        <h4 class="category-cardText  fs-6 fs-md-4   mb-0">素食
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!--品嘗美食  呈現篩選結果 -->
+<section class="restaurant_searchResult mb-1 d-none">
+    <div class="container">
+        <h2 class=" fs-4 fs-md-2 text-dark fw-light mb-2">搜尋結果
+            <p class="fs-sm fs-md-lg d-inline">共有 <span class="search_resultNum text-warning">240</span> 筆
+            </p>
+        </h2>
+
+        <div class="restaurant_resultList  row  mb-8">
+        </div>
+
+        <!-- 分頁 -->
+        <nav aria-label="Page  navigation">
+            <ul class="pagination  mb-0 justify-content-center">
+            </ul>
+        </nav>
+    </div>
+</section>
+
+
+
+<!-- 品嘗美食 分類內頁 -->
+<section class="restaurant_categoryInner mb-1 d-none">
+    <!-- 輪播卡片 -->
+    <div class="container mb-2 mb-md-5">
+        <div class="swiper swiper-restaurant-banner">
+             <!-- 要插入 render 回來的資料 -->
+             <ul class="swiper-wrapper rounded-4 rounded-md-6">
+                <li class="swiper-slide">
+                </li>
+                <li class="swiper-slide">
+                </li>
+                <li class="swiper-slide">
+                </li>
+            </ul>
+
+            <!--  pagination -->
+            <div class="swiper-pagination swiper-pagination-bullets"></div>
+
+            <!-- navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <!-- 內頁內容 -->
+    <div class="container mb-7">
+        <h2 class="restaurant_name fs-4 fs-md-2 fw-light mb-1 mb-md-2">金都餐廳</h2>
+        <div class="mb-2 mb-md-5">
+            <a class="restaurant_category btn btn-outline-badge  rounded-pill  fs-sm fs-md-lg lh-base fw-normal me-1" href="#">
+             </a>
+        </div>
+        <h5 class="fs-m fs-md-5 fw-bold mb-1">餐廳介紹：</h5>
+        <p class="restaurant_description fw-light mb-5 mb-md-7">
+        </p>
+
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="bg-light  col rounded-0 rounded-lg-4 h-100">
+                <div class="px-1 px-lg-3 py-5 ">
+                    <p class="fw-bold">營業時間： <span class="restaurant_time fw-normal"></span></p>
+                    <p class="fw-bold">聯絡電話： <a class="restaurant_phone text-gray-black fw-normal"
+                            href="tel:+886-3-9545114"></a></p>
+                    <p class="fw-bold">餐廳地址： <span
+                            class="restaurant_address text-info text-decoration-underline fw-normal"></span></p>
+                    <p class="fw-bold">官方網站： <a class="restaurant_websiteUrl text-break text-info text-decoration-underline fw-normal"
+                            href="#"></a>
+                    </p>
+                </div>
+            </div>
+            <div class="bg-light bg-lg-white col pb-5 pb-lg-0">
+                <div class="restaurant_map ratio  ratio-17x9 ratio-lg-9x4 overflow-hidden mb-3 mb-lg-5">
+                    <iframe class="rounded-md-4"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14454.01159552712!2d121.58607397049146!3d25.08483239317479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442acea866a6e2f%3A0xb251bab667083c8f!2z5aSn5rmW5YWs5ZySICjpmLLngb3lhazlnJLvvIk!5e0!3m2!1szh-TW!2stw!4v1654327720711!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <p class="fw-bold">周邊資訊：</p>
+                <ul class="restaurant_nearbyInfo row row-cols-1 row-cols-lg-3 gy-1 gy-lg-0">
+                    <li class="col">
+                        <a class="d-block  border border-1 rounded-3" href="#">
+                            <div class="nearbyInfo-card   py-2  py-md-4">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img class="nearbyIcon" src="./assets/images/nearby-scene30.png"
+                                        alt="nearby-scene30">
+                                    <img class="nearbyIcon-hover " src="./assets/images/nearby-scene30_hover.png"
+                                        alt="nearby-scene30_hover">
+                                </div>
+                                <p class="nearbyInfo-cardtext mb-0">附近景點</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col">
+                        <a class="d-block  border border-1 rounded-3" href="#">
+                            <div class="nearbyInfo-card    py-2  py-md-4">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img class="nearbyIcon" src="./assets/images/nearby-event30.png"
+                                        alt="nearby-event30">
+                                    <img class="nearbyIcon-hover " src="./assets/images/nearby-event30_hover.png"
+                                        alt="nearby-event30_hover">
+                                </div>
+                                <p class="nearbyInfo-cardtext  mb-0">附近活動</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col">
+                        <a class="d-block  border border-1 rounded-3" href="#">
+                            <div class="nearbyInfo-card   py-2  py-md-4">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img class="nearbyIcon" src="./assets/images/nearby-food30.png" alt="nearby-food30">
+                                    <img class="nearbyIcon-hover " src="./assets/images/nearby-food30_hover.png"
+                                        alt="nearby-food30_hover">
+                                </div>
+                                <p class="nearbyInfo-cardtext mb-0">附近美食</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 還有這些不能錯過的景點 -->
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center px-0 px-md-3 mb-1 mb-md-2">
+            <h2 class="fs-4 fs-md-2 fw-light">還有這些不能錯過<span class="d-none d-md-inline">的美食</span></h2>
+            <a class="btn btn-moreBtn px-0 px-md-2" href="./restaurant.html"><span class="btn-inner"> 查看更多美食 ❯</span></a>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <!-- restaurant-swiper -->
+                <div class="swiper swiper-recommend">
+                    <!-- 要插入 render 回來的資料 -->
+                    <ul class="swiper-wrapper  recommend_restaurant">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
