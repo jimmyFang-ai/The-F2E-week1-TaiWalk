@@ -95,8 +95,6 @@ function activity_changeCategory(e) {
 
     data_spotResult = category_resultList;
 
-    //資料回傳 寫入分頁函式
-    // renderPages(data_spotResult, 1);
 
     // 呈現 結果
     activity_renderResult(data_spotResult);
@@ -163,7 +161,6 @@ if (activity_searchBtn) {
 
         if (keyword.trim() !== '') {
             search_activity(city, keyword);
-            console.log(city, keyword);
         }
     });
 };
@@ -191,17 +188,14 @@ function search_activity(city, keyword) {
 
                 // 過濾資料 排除沒有類別 1、景點名字、城市
                 thisData = thisData.filter((item) => item.ActivityName && item.City && item.Class1);
-                console.log('data', thisData);
 
 
                 // 如果 city 的值是全部縣市的，把 keyword符合的資料篩選出來
                 if (city === '全部縣市') {
                     resurltData = thisData.filter((item) => item.ActivityName.match(keyword));
-                    console.log(resurltData);
                 } else {
                     // 如果 city 的值是其他縣市，把 city 和 keyword符合的資料篩選出來
                     resurltData = thisData.filter((item) => item.City === city && item.ActivityName.match(keyword));
-                    console.log(resurltData);
                 }
 
                 //   呈現篩選結果
@@ -237,7 +231,6 @@ function activityInner_getData(id) {
             async: false,
             success: function (data) {
                 const thisData = data[0];
-                console.log('data', thisData);
 
                 //呈現 內頁資料內容
                 activityInner_renderData(thisData);
@@ -262,7 +255,6 @@ function activityInner_getData(id) {
 
 // 節慶活動內頁 -  呈現 內頁資料內容
 function activityInner_renderData(data) {
-    console.log(data);
 
 
     // 計算 banner 圖片數量
@@ -431,7 +423,6 @@ function activity_getParameters() {
         //將url  從 '?' 分切成兩部分，
         const searchUrl = location.search.split('?');
 
-        console.log(searchUrl);
 
         //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
         if (!searchUrl[1].includes('&')) {

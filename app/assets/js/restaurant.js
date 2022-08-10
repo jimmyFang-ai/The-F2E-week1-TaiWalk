@@ -91,9 +91,6 @@ function restaurant_changeCategory(e) {
 
     data_restaurantResult = category_resultList;
 
-    //資料回傳 寫入分頁函式
-    // renderPages(data_spotResult, 1);
-
 
     // 呈現 結果
     restaurant_renderResult(data_restaurantResult);
@@ -160,7 +157,6 @@ if (restaurant_searchBtn) {
 
         if (keyword.trim() !== '') {
             search_restaurant(city, keyword);
-            console.log(city, keyword);
         }
     });
 };
@@ -193,11 +189,9 @@ function search_restaurant(city, keyword) {
                 // 如果 city 的值是全部縣市的，把 keyword符合的資料篩選出來
                 if (city === '全部縣市') {
                     resurltData = thisData.filter((item) => item.RestaurantName.match(keyword));
-                    console.log(resurltData);
                 } else {
                     // 如果 city 的值是其他縣市，把 city 和 keyword符合的資料篩選出來
                     resurltData = thisData.filter((item) => item.City === city && item.RestaurantName.match(keyword));
-                    console.log(resurltData);
                 }
 
                 //   呈現篩選結果
@@ -233,7 +227,6 @@ function restaurantInner_getData(id) {
             async: false,
             success: function (data) {
                 const thisData = data[0];
-                console.log('data', thisData);
 
                 //呈現 內頁資料內容
                 restaurantInner_renderData(thisData);
@@ -258,7 +251,6 @@ function restaurantInner_getData(id) {
 
 // 品嘗美食內頁 -  呈現 內頁資料內容
 function restaurantInner_renderData(data) {
-    console.log(data);
 
 
     // 計算 banner 圖片數量
@@ -418,7 +410,6 @@ function restaurant_getParameters() {
         //將url  從 '?' 分切成兩部分，
         const searchUrl = location.search.split('?');
 
-        console.log(searchUrl);
 
         //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
         if (!searchUrl[1].includes('&')) {
@@ -430,7 +421,6 @@ function restaurant_getParameters() {
         } else {
             // 如果取得參數是有 '&' 做連接 city 和 keyword的話，就顯示搜尋結果列表
             const parameters = searchUrl[1].split('&');
-            console.log(parameters);
 
             // 跑 forEach 取出 參數的 city 和 key 的值
             parameters.forEach((parameter, index) => {

@@ -130,7 +130,7 @@ function render_activity(arr) {
 
         // 取得最近活動還沒結束的時間，落在今年或明年。
         const checkDate = parseInt(dataItem.EndTime.slice(0, 4)) >= year && parseInt(dataItem.EndTime.slice(5, 7)) >= month || parseInt(dataItem.EndTime.slice(0, 4)) > year;
-        // console.log(checkDate);
+      
 
         // 判斷 如果checkDate 為 false 重跑一次迴圈
         if (checkDate === false) {

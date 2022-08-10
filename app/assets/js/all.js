@@ -1,21 +1,4 @@
 
-// // PTX api  header 驗證
-// function getAuthorizationHeader() {
-//   //  填入自己 ID、KEY 開始
-//   // let AppID = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
-//   // let AppKey = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
-//   let AppID = 'pi20120413-51900829-226c-41ea';
-//   let AppKey = 'beeda1e6-f94e-4b14-b9d4-98e7c6e2669f';
-//   //  填入自己 ID、KEY 結束
-//   let GMTString = new Date().toGMTString();
-//   let ShaObj = new jsSHA('SHA-1', 'TEXT');
-//   ShaObj.setHMACKey(AppKey, 'TEXT');
-//   ShaObj.update('x-date: ' + GMTString);
-//   let HMAC = ShaObj.getHMAC('B64');
-//   let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
-//   return { 'Authorization': Authorization, 'X-Date': GMTString };
-// }
-
 
 
 // jQuery 初始化
