@@ -81,9 +81,7 @@ function activity_changeCategory(e) {
   var category_resultList = data_activity.filter(function (item) {
     return item.Class1 === categoryVal;
   });
-  data_spotResult = category_resultList; //資料回傳 寫入分頁函式
-  // renderPages(data_spotResult, 1);
-  // 呈現 結果
+  data_spotResult = category_resultList; // 呈現 結果
 
   activity_renderResult(data_spotResult); // 呈現結果數字
 
@@ -122,7 +120,6 @@ if (activity_searchBtn) {
 
     if (keyword.trim() !== '') {
       search_activity(city, keyword);
-      console.log(city, keyword);
     }
   });
 }
@@ -149,20 +146,17 @@ function search_activity(city, keyword) {
 
         thisData = thisData.filter(function (item) {
           return item.ActivityName && item.City && item.Class1;
-        });
-        console.log('data', thisData); // 如果 city 的值是全部縣市的，把 keyword符合的資料篩選出來
+        }); // 如果 city 的值是全部縣市的，把 keyword符合的資料篩選出來
 
         if (city === '全部縣市') {
           resurltData = thisData.filter(function (item) {
             return item.ActivityName.match(keyword);
           });
-          console.log(resurltData);
         } else {
           // 如果 city 的值是其他縣市，把 city 和 keyword符合的資料篩選出來
           resurltData = thisData.filter(function (item) {
             return item.City === city && item.ActivityName.match(keyword);
           });
-          console.log(resurltData);
         } //   呈現篩選結果
 
 
@@ -195,8 +189,7 @@ function activityInner_getData(id) {
       },
       async: false,
       success: function success(data) {
-        var thisData = data[0];
-        console.log('data', thisData); //呈現 內頁資料內容
+        var thisData = data[0]; //呈現 內頁資料內容
 
         activityInner_renderData(thisData); //呈現 推薦列表
 
@@ -217,8 +210,7 @@ function activityInner_getData(id) {
 ; // 節慶活動內頁 -  呈現 內頁資料內容
 
 function activityInner_renderData(data) {
-  console.log(data); // 計算 banner 圖片數量
-
+  // 計算 banner 圖片數量
   var bannerPhoto_num = 0;
 
   if (activityInner_bannerSlides) {} // banner 圖片
@@ -355,8 +347,7 @@ function activity_getParameters() {
     var city;
     var keyword; //將url  從 '?' 分切成兩部分，
 
-    var searchUrl = location.search.split('?');
-    console.log(searchUrl); //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
+    var searchUrl = location.search.split('?'); //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
 
     if (!searchUrl[1].includes('&')) {
       // 取得 路徑 id
@@ -388,22 +379,6 @@ function activity_getParameters() {
 ;
 "use strict";
 
-// // PTX api  header 驗證
-// function getAuthorizationHeader() {
-//   //  填入自己 ID、KEY 開始
-//   // let AppID = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
-//   // let AppKey = 'FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF';
-//   let AppID = 'pi20120413-51900829-226c-41ea';
-//   let AppKey = 'beeda1e6-f94e-4b14-b9d4-98e7c6e2669f';
-//   //  填入自己 ID、KEY 結束
-//   let GMTString = new Date().toGMTString();
-//   let ShaObj = new jsSHA('SHA-1', 'TEXT');
-//   ShaObj.setHMACKey(AppKey, 'TEXT');
-//   ShaObj.update('x-date: ' + GMTString);
-//   let HMAC = ShaObj.getHMAC('B64');
-//   let Authorization = 'hmac username=\"' + AppID + '\", algorithm=\"hmac-sha1\", headers=\"x-date\", signature=\"' + HMAC + '\"';
-//   return { 'Authorization': Authorization, 'X-Date': GMTString };
-// }
 // jQuery 初始化
 $(function () {
   // 取得 TDX api  header 驗證
@@ -589,8 +564,7 @@ function render_activity(arr) {
     var dataIndex = getRandom(arr.length);
     var dataItem = arr[dataIndex]; // 取得最近活動還沒結束的時間，落在今年或明年。
 
-    var checkDate = parseInt(dataItem.EndTime.slice(0, 4)) >= year && parseInt(dataItem.EndTime.slice(5, 7)) >= month || parseInt(dataItem.EndTime.slice(0, 4)) > year; // console.log(checkDate);
-    // 判斷 如果checkDate 為 false 重跑一次迴圈
+    var checkDate = parseInt(dataItem.EndTime.slice(0, 4)) >= year && parseInt(dataItem.EndTime.slice(5, 7)) >= month || parseInt(dataItem.EndTime.slice(0, 4)) > year; // 判斷 如果checkDate 為 false 重跑一次迴圈
 
     if (checkDate === false) {
       i -= 1;
@@ -676,96 +650,6 @@ function search_keyword() {
 }
 
 ;
-//   --------- 篩選類別後，顯示資料分頁 切換會壞掉  ---------
-// // 取得分頁 DOM 元素
-// const pagination = document.querySelector('.pagination');
-// // 分頁功能 - 整體分頁功能
-// function renderPages(data, nowPage) {
-//     // 每一頁只顯示36筆資料
-//     let dataPerPage =  36;
-//     // page 按鈕總數量公式: 資料數量總額 / 每一頁要顯示的資料數量
-//     // 因為計算過程會有餘數產生，所以要無條件進位，使用 Math.ceil()函式取得一個大於等於指定數字的最小整數。
-//     const totalPages = Math.ceil(data.length / dataPerPage);
-//     // 頁數
-//     // 當前頁數，對應現在當前頁數
-//     let currentPage = nowPage;
-//     // 當 "當前頁數" 比 "總頁數" 大的時候， "當前頁數" 等於 "總頁數"
-//     if (currentPage > totalPages) {
-//         currentPage = totalPages;
-//     };
-//     // 資料筆數
-//     const minData = (currentPage * dataPerPage) - dataPerPage + 1; // 最小資料筆數
-//     const maxData = (currentPage * dataPerPage);  // 最大資料筆數
-//     // 取出當前頁數的資料
-//     const currentPageData = [];
-//     // // 取得 data 資料的索引位置
-//     data.forEach((item, index) => {
-//         //取得 data 索引位置，因為索引是從 0 開始，所以要 +1
-//         //當 index+1 比 minData 大且又小於 maxData 就push 進去 currentPageData 陣列
-//         if (index + 1 >= minData && index + 1 <= maxData) {
-//             currentPageData.push(item);
-//         };
-//     });
-//     // 物件方式傳遞資料
-//     const pageInfo = {
-//         totalPages,
-//         currentPage,
-//         hasPage: currentPage > 1,
-//         hasNext: currentPage < totalPages,
-//     };
-//     // 呈現出該頁資料
-//     scenicSpot_renderResult(currentPageData);
-//     // 呈現出分頁按鈕
-//     renderPageBtn(pageInfo);
-//     console.log(`全部資料:${data.length} 每一頁顯示:${dataPerPage}筆 總頁數:${totalPages}`);
-// };
-// // 分頁功能 - 渲染分頁按鈕
-// function renderPageBtn(pageInfo) {
-//     let str = "";
-//     const totalPages = pageInfo.totalPages;
-//     // 判斷 總頁數是否大於 1 頁
-//     if (totalPages > 1) {
-//         //點選上一頁
-//         str += (pageInfo.hasPage) ?
-//             `<li class="page-item"><a class="page-link" href="#"  data-page="${Number(pageInfo.currentPage) - 1}">&laquo;</a></li>`
-//             : `<li class="page-item disabled"><span class="page-link">&laquo;</span></li>`;
-//         // 點選頁數
-//         for (let i = 1; i <= totalPages; i++) {
-//             // 一開始預設顯示第一頁，如果是第一頁會加上 .active 樣式
-//             str += (Number(pageInfo.currentPage) === i) ?
-//                 `<li class="page-item active"><a class="page-link" href="#" aria-label="Previous" data-page="${i}">${i}</a></li>`
-//                 : `<li class="page-item"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
-//         };
-//         // 點選下一頁
-//         str += (pageInfo.hasNext) ?
-//             `<li class="page-item"><a class="page-link" href="#" aria-label="Next" data-page="${Number(pageInfo.currentPage) + 1}">&raquo;</a></li>`
-//             : `<li class="page-item disabled"><span class="page-link" >&raquo;</span></li>`;
-//     } else {
-//         //總頁數小於 1 頁，只顯示分頁按鈕
-//         for (let i = 1; i <= totalPages; i++) {
-//             // 一開始預設顯示第一頁，如果是第一頁會加上 .active 樣式
-//             str += (Number(pageInfo.currentPage) === i) ?
-//                 `<li class="page-item active"><a class="page-link" href="#" aria-label="Previous" data-page="${i}">${i}</a></li>`
-//                 : `<li class="page-item"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
-//         };
-//     };
-//     pagination.innerHTML = str;
-// };
-// // 在 pagination 綁定監聽
-// if (pagination !== null) {
-//     pagination.addEventListener('click', switchPage);
-// };
-// console.log(pagination);
-// //分頁功能 - 點擊按鈕切換頁面功能
-// function switchPage(e) {
-//     e.preventDefault();
-//     if (e.target.nodeName !== 'A') {
-//         return;
-//     };
-//     const clickPage = e.target.dataset.page;
-//     renderPages(data_filterResult, clickPage);
-// };
-"use strict";
 "use strict";
 
 // 主要區塊 DOM 
@@ -846,9 +730,7 @@ function restaurant_changeCategory(e) {
   var category_resultList = data_restaurant.filter(function (item) {
     return item.Class === categoryVal;
   });
-  data_restaurantResult = category_resultList; //資料回傳 寫入分頁函式
-  // renderPages(data_spotResult, 1);
-  // 呈現 結果
+  data_restaurantResult = category_resultList; // 呈現 結果
 
   restaurant_renderResult(data_restaurantResult); // 呈現結果數字
 
@@ -887,7 +769,6 @@ if (restaurant_searchBtn) {
 
     if (keyword.trim() !== '') {
       search_restaurant(city, keyword);
-      console.log(city, keyword);
     }
   });
 }
@@ -920,13 +801,11 @@ function search_restaurant(city, keyword) {
           resurltData = thisData.filter(function (item) {
             return item.RestaurantName.match(keyword);
           });
-          console.log(resurltData);
         } else {
           // 如果 city 的值是其他縣市，把 city 和 keyword符合的資料篩選出來
           resurltData = thisData.filter(function (item) {
             return item.City === city && item.RestaurantName.match(keyword);
           });
-          console.log(resurltData);
         } //   呈現篩選結果
 
 
@@ -959,8 +838,7 @@ function restaurantInner_getData(id) {
       },
       async: false,
       success: function success(data) {
-        var thisData = data[0];
-        console.log('data', thisData); //呈現 內頁資料內容
+        var thisData = data[0]; //呈現 內頁資料內容
 
         restaurantInner_renderData(thisData); //呈現 推薦列表
 
@@ -981,8 +859,7 @@ function restaurantInner_getData(id) {
 ; // 品嘗美食內頁 -  呈現 內頁資料內容
 
 function restaurantInner_renderData(data) {
-  console.log(data); // 計算 banner 圖片數量
-
+  // 計算 banner 圖片數量
   var bannerPhoto_num = 0; // banner 圖片
   // 第一張圖片
 
@@ -1110,8 +987,7 @@ function restaurant_getParameters() {
     var city;
     var keyword; //將url  從 '?' 分切成兩部分，
 
-    var searchUrl = location.search.split('?');
-    console.log(searchUrl); //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
+    var searchUrl = location.search.split('?'); //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
 
     if (!searchUrl[1].includes('&')) {
       // 取得 路徑 id
@@ -1120,8 +996,7 @@ function restaurant_getParameters() {
       restaurantInner_getData(id);
     } else {
       // 如果取得參數是有 '&' 做連接 city 和 keyword的話，就顯示搜尋結果列表
-      var parameters = searchUrl[1].split('&');
-      console.log(parameters); // 跑 forEach 取出 參數的 city 和 key 的值
+      var parameters = searchUrl[1].split('&'); // 跑 forEach 取出 參數的 city 和 key 的值
 
       parameters.forEach(function (parameter, index) {
         if (parameters[index].split('=')[0] === 'city') {
@@ -1296,20 +1171,17 @@ function search_scenicSpot(city, keyword) {
 
         thisData = thisData.filter(function (item) {
           return item.ScenicSpotName && item.City && item.Class1;
-        });
-        console.log('data', thisData); // 如果 city 的值是全部縣市的，把keyword符合的資料篩選出來
+        }); // 如果 city 的值是全部縣市的，把keyword符合的資料篩選出來
 
         if (city === '全部縣市') {
           resurltData = thisData.filter(function (item) {
             return item.ScenicSpotName.match(keyword);
           });
-          console.log(resurltData);
         } else {
           // 如果 city 的值是其他縣市，把 city 和 keyword符合的資料篩選出來
           resurltData = thisData.filter(function (item) {
             return item.City === city && item.ScenicSpotName.match(keyword);
           });
-          console.log(resurltData);
         } //   呈現篩選結果
 
 
@@ -1342,8 +1214,7 @@ function scenicSpotInner_getData(id) {
       },
       async: false,
       success: function success(data) {
-        var thisData = data[0];
-        console.log('data', thisData); //呈現 內頁資料內容
+        var thisData = data[0]; //呈現 內頁資料內容
 
         scenicSpotInner_renderData(thisData); //呈現 推薦列表
 
@@ -1495,8 +1366,7 @@ function scenicSpot_getParameters() {
     var city;
     var keyword; //將url  從 '?' 分切成兩部分，
 
-    var searchUrl = location.search.split('?');
-    console.log(searchUrl); //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
+    var searchUrl = location.search.split('?'); //  如果取得參數是沒有 '&'的多個參數的話，就取得 id的值，並顯示資料內頁
 
     if (!searchUrl[1].includes('&')) {
       // 取得 路徑 id
@@ -1670,17 +1540,6 @@ var swiper_recommend = new Swiper(".swiper-recommend", {
 });
 "use strict";
 
-// 漢堡動態效果
-// const togglerBurger = document.querySelector('#toggler-burger');
-// // 預設是 false 選單關閉，不會出現打 X
-// let isMenuOpen = false;
-// togglerBurger.addEventListener('click', function (e) {
-//     //this 的指向是 togglerBurger 本身 要加上 open 樣式
-//     // console.log(this);
-//     // 點擊後 選單打開 為true，會出現打 X
-//     isMenuOpen = !isMenuOpen;
-//     isMenuOpen ? this.classList.add('open') : this.classList.remove('open');
-// })
 // 動態效果
 // jQuery 初始化
 $(function () {
